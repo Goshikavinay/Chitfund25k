@@ -1,0 +1,398 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 1rem 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0.5rem;
+}
+
+.backLink {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    transition: all var(--transition-normal);
+}
+
+.backLink:hover {
+    color: var(--primary-color);
+    transform: translateX(-4px);
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 850;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1.5px;
+    background: linear-gradient(to bottom right, var(--text-main), var(--text-muted));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: white;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    box-shadow: 0 4px 10px var(--primary-glow);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.addMembersButton {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.75rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    font-weight: 700;
+    color: white;
+    transition: all var(--transition-normal);
+    box-shadow: 0 8px 16px -4px var(--primary-glow);
+}
+
+.addMembersButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -6px var(--primary-glow);
+}
+
+.editButton {
+    padding: 0.85rem 1.75rem;
+    background-color: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: 14px;
+    font-weight: 700;
+    color: var(--text-main);
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+}
+
+.editButton:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.enrollButton {
+    padding: 0.85rem 2rem;
+    background: linear-gradient(135deg, var(--secondary-color), #fbbf24);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    font-weight: 800;
+    color: #000;
+    transition: all var(--transition-normal);
+    box-shadow: 0 8px 16px -4px rgba(245, 158, 11, 0.3);
+    cursor: pointer;
+}
+
+.enrollButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -6px rgba(245, 158, 11, 0.4);
+}
+
+.overviewContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.overviewItem {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+}
+
+.overviewIcon {
+    width: 44px;
+    height: 44px;
+    background: rgba(79, 70, 229, 0.05);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.overviewText p {
+    margin: 0 0 0.75rem 0;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    color: var(--text-main);
+}
+
+.enrolledBanner {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(16, 185, 129, 0.01));
+    border: 1px solid var(--success-color);
+    border-radius: 18px;
+    margin-top: 1rem;
+    backdrop-filter: blur(5px);
+}
+
+.bannerIcon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--success-color), #059669);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
+}
+
+.bannerText {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.bannerText strong {
+    color: #064e3b;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.bannerText span {
+    color: #065f46;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.statCard {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+}
+
+.statIcon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.statInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.statLabel {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.statValue {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+.detailsGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.emptyMembers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 2rem;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.infoIcon {
+    margin-bottom: 1.5rem;
+    opacity: 0.15;
+    color: var(--primary-color);
+}
+
+.memberList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.memberItem {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--border-pro);
+    transition: all var(--transition-normal);
+}
+
+.memberItem:hover {
+    background: #ffffff;
+    box-shadow: var(--shadow-md);
+    transform: translateX(8px);
+}
+
+.memberAvatar {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px var(--primary-glow);
+}
+
+.memberInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.memberName {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-main);
+}
+
+.memberPhone {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.viewMemberLink {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    background: rgba(79, 70, 229, 0.05);
+    border-radius: 10px;
+    transition: all var(--transition-normal);
+}
+
+.viewMemberLink:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.countBadge {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 850;
+    box-shadow: 0 4px 10px var(--primary-glow);
+}
+
+.infoRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.infoRow:last-child {
+    border-bottom: none;
+}
+
+.infoLabel {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.infoValue {
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--text-main);
+}
+
+.statusBadge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.statusBadge.active {
+    background: rgba(16, 185, 129, 0.08);
+    color: var(--success-color);
+    border: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.notFound {
+    padding: 8rem 2rem;
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+    .detailsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+}

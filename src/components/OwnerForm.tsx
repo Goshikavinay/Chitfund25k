@@ -1,0 +1,125 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { useRouter, useParams } from "next/navigation";
+import { useChitContext, Owner } from "@/context/ChitContext";
+import Card from "@/components/Card";
+import styles from "./OwnerForm.module.css";
+import { ArrowLeft, Save } from "lucide-react";
+import Link from "next/link";
+
+export default function OwnerForm() {
+    const router = useRouter();
+    const params = useParams();
+    const { owners, addOwner, updateOwner } = useChitContext();
+    const isEditing = !!params.id;
+
+    const [formData, setFormData] = useState<Omit<Owner, "id">>({
+        name: "",
+        phone: "",
+        companyName: "",
+    });
+
+    useEffect(() => {
+        if (isEditing && params.id) {
+            const ownerToEdit = owners.find((o) => o.id === params.id);
+            if (ownerToEdit) {
+                setFormData({
+                    name: ownerToEdit.name,
+                    phone: ownerToEdit.phone,
+                    companyName: ownerToEdit.companyName,
+                });
+            }
+        }
+    }, [isEditing, params.id, owners]);
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (isEditing && params.id) {
+            updateOwner(params.id as string, formData);
+        } else {
+            addOwner(formData);
+        }
+        router.push("/owners");
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
+
+    return (
+        <div className={styles.container}>
+            <div className={styles.header}>
+                <Link href="/owners" className={styles.backLink}>
+                    <ArrowLeft size={20} />
+                    <span>Back to Owners</span>
+                </Link>
+                <h1 className={styles.title}>{isEditing ? "Edit Owner" : "New Owner"}</h1>
+            </div>
+
+            <Card className={styles.formCard}>
+                <form onSubmit={handleSubmit} className={styles.form}>
+                    <div className={styles.formGroup}>
+                        <label htmlFor="name">Owner Name *</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                            placeholder="e.g. Vikram Seth"
+                            className={styles.input}
+                        />
+                    </div>
+
+                    <div className={styles.formGroup}>
+                        <label htmlFor="companyName">Company Name *</label>
+                        <input
+                            type="text"
+                            id="companyName"
+                            name="companyName"
+                            value={formData.companyName}
+                            onChange={handleChange}
+                            required
+                            placeholder="e.g. Seth Financial Services"
+                            className={styles.input}
+                        />
+                    </div>
+
+                    <div className={styles.formGroup}>
+                        <label htmlFor="phone">Phone Number * (10 Digits)</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={(e) => {
+                                const val = e.target.value.replace(/\D/g, "");
+                                if (val.length <= 10) {
+                                    setFormData(prev => ({ ...prev, phone: val }));
+                                }
+                            }}
+                            required
+                            maxLength={10}
+                            pattern="[0-9]{10}"
+                            placeholder="Enter 10 digit number"
+                            className={styles.input}
+                        />
+                    </div>
+
+                    <div className={styles.actions}>
+                        <button type="submit" className={styles.submitButton}>
+                            <Save size={20} />
+                            <span>{isEditing ? "Update Owner" : "Add Owner"}</span>
+                        </button>
+                    </div>
+                </form>
+            </Card>
+        </div>
+    );
+}

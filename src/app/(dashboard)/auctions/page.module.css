@@ -1,0 +1,323 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 1rem 0;
+}
+
+.header {
+    margin-bottom: 0.5rem;
+}
+
+.title {
+    font-size: 2.25rem;
+    font-weight: 850;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1.5px;
+    background: linear-gradient(to bottom right, var(--text-main), var(--text-muted));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.leftCol,
+.rightCol {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.groupList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.groupItem {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    border-radius: 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-pro);
+    cursor: pointer;
+    text-align: left;
+    transition: all var(--transition-normal);
+    width: 100%;
+}
+
+.groupItem:hover {
+    background-color: var(--bg-main);
+    border-color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.groupItem.active {
+    background: var(--mesh-bg);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-sm), 0 0 0 1px var(--primary-color);
+}
+
+.groupIcon {
+    width: 44px;
+    height: 44px;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: var(--text-muted);
+    transition: all var(--transition-normal);
+}
+
+.active .groupIcon {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: white;
+    box-shadow: 0 4px 10px var(--primary-glow);
+}
+
+.groupInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.groupName {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-main);
+}
+
+.groupSubtitle {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.checkIcon {
+    color: var(--primary-color);
+}
+
+.historyList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.historyItem {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    border: 1px solid var(--border-pro);
+    transition: all var(--transition-normal);
+}
+
+.historyItem:hover {
+    background: #ffffff;
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
+}
+
+.historyHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.historyDate {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.historyBid {
+    font-weight: 850;
+    font-size: 1.1rem;
+    color: var(--danger-color);
+}
+
+.historyDetail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.historyWinner {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.historyDividend {
+    font-size: 0.9rem;
+    color: var(--success-color);
+    font-weight: 700;
+}
+
+.emptyHistory {
+    padding: 4rem 2rem;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.historyIcon {
+    margin: 0 auto 1.5rem;
+    opacity: 0.15;
+    color: var(--primary-color);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.formGroup label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.select,
+.input {
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border-light);
+    border-radius: 14px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: var(--bg-card);
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-inner);
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.select:focus,
+.input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.08), var(--shadow-inner);
+}
+
+.inputContainer {
+    position: relative;
+}
+
+.inputIcon {
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--danger-color);
+    opacity: 0.7;
+}
+
+.input {
+    padding-left: 3rem;
+    width: 100%;
+}
+
+.helperText {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.summaryBox {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.03));
+    border-radius: 16px;
+    border: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.summaryItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summaryValue {
+    font-weight: 850;
+    font-size: 1.1rem;
+    color: var(--success-color);
+}
+
+.submitButton {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: white;
+    padding: 1.1rem;
+    border-radius: 14px;
+    font-weight: 800;
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    box-shadow: 0 8px 20px -6px var(--primary-glow);
+}
+
+.submitButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -8px var(--primary-glow);
+}
+
+.emptyState {
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.infoIcon {
+    margin: 0 auto 1.5rem;
+    opacity: 0.15;
+    color: var(--primary-color);
+}
+
+.linkAction {
+    margin-top: 1.5rem;
+    display: inline-block;
+    color: var(--primary-color);
+    font-weight: 800;
+    font-size: 1rem;
+    transition: all var(--transition-normal);
+}
+
+.linkAction:hover {
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+}
+
+@media (max-width: 1024px) {
+    .mainGrid {
+        grid-template-columns: 1fr;
+    }
+}

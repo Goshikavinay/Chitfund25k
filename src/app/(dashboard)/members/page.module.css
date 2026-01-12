@@ -1,0 +1,203 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 1rem 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0.5rem;
+}
+
+.heading {
+    font-size: 2.25rem;
+    font-weight: 850;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1.5px;
+    background: linear-gradient(to bottom right, var(--text-main), var(--text-muted));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subheading {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.createButton {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: white;
+    padding: 0.85rem 1.75rem;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all var(--transition-normal);
+    box-shadow: 0 8px 16px -4px var(--primary-glow);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.createButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px -4px var(--primary-glow);
+}
+
+.emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem;
+    background-color: var(--bg-card);
+    border-radius: 24px;
+    border: 1px solid var(--border-pro);
+    text-align: center;
+    box-shadow: var(--shadow-pro);
+}
+
+.emptyIcon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.1));
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 2rem;
+}
+
+.memberCard {
+    padding: 0 !important;
+    background: var(--bg-card);
+    border-radius: 20px;
+    border: 1px solid var(--border-pro);
+    box-shadow: var(--shadow-pro);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.memberCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+}
+
+.memberHeader {
+    display: flex;
+    align-items: center;
+    padding: 1.75rem;
+    gap: 1.25rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    background: var(--mesh-bg);
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 800;
+    font-size: 1.5rem;
+    box-shadow: 0 8px 16px -4px var(--primary-glow);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.memberInfo {
+    flex: 1;
+}
+
+.memberName {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.35rem;
+    letter-spacing: -0.5px;
+}
+
+.memberContact {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.actions {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.iconAction {
+    padding: 0.6rem;
+    border-radius: 10px;
+    color: var(--text-muted);
+    transition: all var(--transition-normal);
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.iconAction:hover {
+    background-color: #ffffff;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
+}
+
+.iconAction.delete:hover {
+    border-color: var(--danger-color);
+    color: var(--danger-color);
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2);
+}
+
+.memberDetails {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.detailRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.detailIcon {
+    color: var(--primary-color);
+    margin-top: 0.15rem;
+    opacity: 0.6;
+}
+
+.detailText {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+}

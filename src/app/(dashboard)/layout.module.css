@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--bg-main);
+}
+
+.mainContent {
+    flex: 1;
+    margin-left: 260px;
+    /* Sidebar width */
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 260px);
+    position: relative;
+}
+
+.contentArea {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}

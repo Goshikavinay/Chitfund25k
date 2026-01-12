@@ -1,0 +1,300 @@
+.header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    background-color: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    border-bottom: 1px solid var(--border-pro);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+}
+
+.searchContainer {
+    position: relative;
+    width: 440px;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.searchInput {
+    width: 100%;
+    padding: 0.85rem 1rem 0.85rem 3rem;
+    border-radius: 14px;
+    border: 1px solid var(--border-light);
+    background-color: var(--bg-card);
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-inner);
+}
+
+.searchInput:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.08), var(--shadow-sm);
+}
+
+.rightSection {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.iconButton {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    position: relative;
+    padding: 0.65rem;
+    border-radius: 12px;
+    transition: all var(--transition-normal);
+    background-color: var(--border-light);
+}
+
+.iconButton:hover {
+    background-color: rgba(79, 70, 229, 0.1);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 800;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 1rem;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    background: var(--border-light);
+    border: 1px solid transparent;
+}
+
+.profile:hover {
+    background-color: #ffffff;
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.avatar {
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 4px 8px var(--primary-glow);
+}
+
+.profileInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.role {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.chevron {
+    color: var(--text-muted);
+    transition: transform var(--transition-normal);
+}
+
+.chevron.active {
+    transform: rotate(180deg);
+}
+
+.notificationDropdown {
+    position: absolute;
+    top: calc(100% + 15px);
+    right: 0;
+    width: 360px;
+    background: var(--bg-card);
+    border-radius: 20px;
+    box-shadow: var(--shadow-pro);
+    border: 1px solid var(--border-pro);
+    overflow: hidden;
+    z-index: 100;
+    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.notificationHeader {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--mesh-bg);
+}
+
+.notificationHeader h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.notificationList {
+    max-height: 440px;
+    overflow-y: auto;
+}
+
+.notificationItem {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border-light);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.notificationItem:hover {
+    background: var(--bg-main);
+}
+
+.notificationItem.unread {
+    background: rgba(79, 70, 229, 0.04);
+}
+
+.notifTitle {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+
+.notifMessage {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.notifDate {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+.profileDropdown {
+    position: absolute;
+    top: calc(100% + 15px);
+    right: 0;
+    width: 260px;
+    background: var(--bg-card);
+    border-radius: 20px;
+    box-shadow: var(--shadow-pro);
+    border: 1px solid var(--border-pro);
+    overflow: hidden;
+    z-index: 100;
+    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdownHeader {
+    padding: 1.5rem;
+    background: var(--mesh-bg);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.userEmail {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-main);
+    word-break: break-all;
+}
+
+.userPhone {
+    margin: 0.4rem 0 0 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.dropdownMenu {
+    padding: 0.75rem;
+}
+
+.dropdownItem {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.85rem 1rem;
+    border: none;
+    background: none;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    text-align: left;
+}
+
+.dropdownItem:hover {
+    background-color: var(--bg-main);
+    color: var(--primary-color);
+    transform: translateX(4px);
+}
+
+.divider {
+    margin: 0.75rem;
+    border: none;
+    border-top: 1px solid var(--border-light);
+}
